@@ -1,0 +1,10 @@
+
+  <form [formGroup]="CadastroForm" (submit)="Cadastrar()">
+    <mat-form-field appearance="fill">
+    <mat-label>Nome do produto</mat-label>
+      <input matInput placeholder="Nome do produto" formControlName="Nome">
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary">Cadastrar</button>
+
+  </form>

@@ -1,9 +1,30 @@
 
-  <form [formGroup]="CadastroForm" (submit)="Cadastrar()">
+  <form [formGroup]="cadastroForm" (submit)="Cadastrar()">
     <mat-form-field appearance="fill">
     <mat-label>Nome do produto</mat-label>
-      <input matInput placeholder="Nome do produto" formControlName="Nome">
+      <input matInput placeholder="Nome do produto" formControlName="nome">
     </mat-form-field>
+
+    <br>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Quantidade do produto</mat-label>
+        <input matInput placeholder="Quantidade do produto" formControlName="quantidade">
+      </mat-form-field>
+
+      <br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Fornecedor do produto</mat-label>
+          <input matInput placeholder="Fornecedor do produto" formControlName="fornecedor">
+        </mat-form-field>
+
+        <br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Categoria do produto</mat-label>
+          <input matInput placeholder="Categoria do produto" formControlName="categoria">
+        </mat-form-field>
     <br>
     <button mat-raised-button color="primary">Cadastrar</button>
 

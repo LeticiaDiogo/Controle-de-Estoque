@@ -1,8 +1,8 @@
 export interface CadastroModel{
-  id?:string;
-  Nome:string;
-  Quant:number;
-  Validade:number;
-  Fornecedor:string;
-  Categoria:string;
+  id?: string,
+  nome: string,
+  quantidade: number,
+  fornecedor: string,
+  validade: Date,
+  categoria: string
 }

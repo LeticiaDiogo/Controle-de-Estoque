@@ -1,6 +1,11 @@
 {
   "Produto":{
-
+    "id": 1,
+    "nome": "Prego",
+    "quantidade": 54,
+    "fornecedor": "MetalLTDA",
+    "validade": "23/05/2023",
+    "categoria": "Construção"
   }
 
 

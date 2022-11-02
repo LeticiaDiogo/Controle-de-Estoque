@@ -1,6 +1,7 @@
-import { CadastroModel } from './Cadastro/model/Cadastro.model';
-import { Injectable } from '@angular/core';
 import * as uuid from 'uuid';
+import { Injectable } from '@angular/core';
+import { CadastroModel } from './Cadastro/model/Cadastro.model';
+
 
 @Injectable({
   providedIn: 'root'
@@ -8,23 +9,23 @@ import * as uuid from 'uuid';
 export class ControleService {
 
 
-constructor() { }
 
-Cadastrar(Cadastros:CadastroModel):void{
-  Cadastros.id=uuid.v4();
-  localStorage['Cadastros'] = JSON.stringify(Cadastros);
+constructor() {}
 
-  console.log('[Cadastros]',localStorage['Cadastros']);
-
-
-}
-
-Listar(): CadastroModel[]{
-  const Cadastros = localStorage['Cadastros']
-  return Cadastros;
-}
-
-
+Cadastrar(cadastro: CadastroModel): void {
+  let cadastros:CadastroModel[] = this.Listar();
+  cadastro.id = uuid.v4();
+  cadastros.push(cadastro);
+  console.log(cadastros);
+  localStorage.setItem('cadastros', JSON.stringify(cadastros));
 
 }
 
+Listar(): CadastroModel [] {
+
+   return JSON.parse(localStorage.getItem('cruds')!) as CadastroModel[] ?? [];
+}
+
+
+
+}

@@ -1,9 +1,20 @@
 <table>
   <tr>
-    <th>Produtos</th>
+    <th>Nome</th>
+    <th>Status</th>
+    <th>Quantidade</th>
+    <th>Fornecedor</th>
+    <th>Validade</th>
+    <th>Categoria</th>
+    <th colspan="2">Gerenciar</th>
   </tr>
-<tr *ngFor=" let Cadastro of (Cadastros.Nome|)">
-<td>{{Cadastro.Nome}}</td>
-</tr>
 
-</table>
+  <tr *ngFor="let cadastros of cadastros">
+    <td>{{ cadastros.nome }}</td>
+    <td>{{ cadastros.quantidade }}</td>
+    <td>{{ cadastros.fornecedor }}</td>
+    <td>{{ cadastros.validade | date: "dd/MM/yyyy HH:mm":"-03:00" }}</td>
+    <td>{{ cadastros.categoria }}</td>
+    <td class="material-icons">edit</td>
+    <td class="material-icons">delete</td>
+  </tr>

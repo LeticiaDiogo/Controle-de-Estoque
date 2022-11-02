@@ -9,17 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarComponent implements OnInit {
 
-  Cadastros!:CadastroModel[];
+  cadastros!: CadastroModel[];
 
-  constructor( private ControleService: ControleService) { }
+  constructor( private controleService: ControleService) { }
 
   ngOnInit(): void {
 
-    this.Cadastros= this.ControleService.Listar();
+    this.cadastros = this.controleService.Listar()
   }
 
-  Listar(): CadastroModel[]{
-    return this.Cadastros;
+  Listar(): CadastroModel[] {
+    return this.cadastros;
   }
 
 }

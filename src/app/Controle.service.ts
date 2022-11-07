@@ -23,9 +23,20 @@ Cadastrar(cadastro: CadastroModel): void {
 
 Listar(): CadastroModel [] {
 
-   return JSON.parse(localStorage.getItem('cruds')!) as CadastroModel[] ?? [];
+   return JSON.parse(localStorage.getItem('cadastros')!) as CadastroModel[] ?? [];
 }
 
+Remover(id: string): void {
+  let cadastros:CadastroModel[] = this.Listar();
 
+  let novosCadastros: CadastroModel[] = [];
+  for(let i = 0; i < cadastros.length; i++) {
+    if(cadastros[i].id !== id) {
+      novosCadastros.push(cadastros[i]);
+    }
+  }
+  cadastros = novosCadastros;
+  localStorage.setItem('cadastros', JSON.stringify(cadastros));
+}
 
 }

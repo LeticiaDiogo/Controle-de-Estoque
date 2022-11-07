@@ -11,6 +11,8 @@ export class ListarComponent implements OnInit {
 
   cadastros!: CadastroModel[];
 
+  clickedRow!: CadastroModel;
+
   constructor( private controleService: ControleService) { }
 
   ngOnInit(): void {
@@ -20,6 +22,10 @@ export class ListarComponent implements OnInit {
 
   Listar(): CadastroModel[] {
     return this.cadastros;
+  }
+
+  Remover(id:string): void {
+    this.controleService.Remover(id);
   }
 
 }

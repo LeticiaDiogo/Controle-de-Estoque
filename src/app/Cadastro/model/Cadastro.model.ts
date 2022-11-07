@@ -1,5 +1,5 @@
 export interface CadastroModel{
-  id?: string,
+  id: string,
   nome: string,
   quantidade: number,
   fornecedor: string,

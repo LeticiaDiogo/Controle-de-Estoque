@@ -1,7 +1,6 @@
 <table>
   <tr>
     <th>Nome</th>
-    <th>Status</th>
     <th>Quantidade</th>
     <th>Fornecedor</th>
     <th>Validade</th>
@@ -15,6 +14,5 @@
     <td>{{ cadastros.fornecedor }}</td>
     <td>{{ cadastros.validade | date: "dd/MM/yyyy HH:mm":"-03:00" }}</td>
     <td>{{ cadastros.categoria }}</td>
-    <td class="material-icons">edit</td>
-    <td class="material-icons">delete</td>
+    <button type="submit" class="material-icons"  (click)="Remover(clickedRow.id)">delete</button>
   </tr>
